@@ -2,7 +2,7 @@
 #include "../lib/vector.h"
 
 int main(int argc, char **argv) {
-	vector_str vector;
+	struct vector_str vector;
 	vector_init_str(&vector);
 
 	printf("Allocating...\n");
