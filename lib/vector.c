@@ -157,7 +157,8 @@ static VECTOR_STATUS vector_auto_shrink_int(struct vector_int *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_int(struct vector_int *vector) {
+void vector_destroy_int(struct vector_int *vector)
+{
 	free(vector->data);
 }
 
@@ -236,7 +237,8 @@ static VECTOR_STATUS vector_auto_shrink_uint(struct vector_uint *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_uint(struct vector_uint *vector) {
+void vector_destroy_uint(struct vector_uint *vector)
+{
 	free(vector->data);
 }
 
@@ -315,7 +317,8 @@ static VECTOR_STATUS vector_auto_shrink_long(struct vector_long *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_long(struct vector_long *vector) {
+void vector_destroy_long(struct vector_long *vector)
+{
 	free(vector->data);
 }
 
@@ -394,7 +397,8 @@ static VECTOR_STATUS vector_auto_shrink_ulong(struct vector_ulong *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_ulong(struct vector_ulong *vector) {
+void vector_destroy_ulong(struct vector_ulong *vector)
+{
 	free(vector->data);
 }
 
@@ -473,7 +477,8 @@ static VECTOR_STATUS vector_auto_shrink_float(struct vector_float *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_float(struct vector_float *vector) {
+void vector_destroy_float(struct vector_float *vector)
+{
 	free(vector->data);
 }
 
@@ -552,7 +557,8 @@ static VECTOR_STATUS vector_auto_shrink_double(struct vector_double *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_double(struct vector_double *vector) {
+void vector_destroy_double(struct vector_double *vector)
+{
 	free(vector->data);
 }
 
@@ -631,7 +637,8 @@ static VECTOR_STATUS vector_auto_shrink_bool(struct vector_bool *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_bool(struct vector_bool *vector) {
+void vector_destroy_bool(struct vector_bool *vector)
+{
 	free(vector->data);
 }
 

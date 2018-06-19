@@ -72,6 +72,7 @@ static VECTOR_STATUS vector_auto_shrink_<TYPE>(struct vector_<TYPE> *vector)
 	return (!vector->data ? VECTOR_STATUS_ERR_ALLOC : VECTOR_STATUS_OK);
 }
 
-void vector_destroy_<TYPE>(struct vector_<TYPE> *vector) {
+void vector_destroy_<TYPE>(struct vector_<TYPE> *vector)
+{
 	free(vector->data);
 }
