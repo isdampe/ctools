@@ -69,6 +69,12 @@ VECTOR_STATUS vector_pop_str(struct vector_str *vector)
 	return VECTOR_STATUS_OK;
 }
 
+VECTOR_STATUS vector_pop_front_str(struct vector_str *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_str(vector);
+}
+
 static VECTOR_STATUS vector_auto_shrink_str(struct vector_str *vector)
 {
 	vector->size -= VECTOR_MAX_EXPAND_STEP;

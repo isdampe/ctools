@@ -22,6 +22,7 @@ VECTOR_STATUS vector_prepend_str(struct vector_str *vector, const char *src);
 static VECTOR_STATUS vector_auto_expand_str(struct vector_str *vector);
 long vector_search_str(struct vector_str *vector, const char *src);
 VECTOR_STATUS vector_pop_str(struct vector_str *vector);
+VECTOR_STATUS vector_pop_front_str(struct vector_str *vector);
 static VECTOR_STATUS vector_auto_shrink_str(struct vector_str *vector);
 void vector_destroy_str(struct vector_str *vector);
 

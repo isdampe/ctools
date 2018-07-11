@@ -69,6 +69,12 @@ VECTOR_STATUS vector_pop_str(struct vector_str *vector)
 	return VECTOR_STATUS_OK;
 }
 
+VECTOR_STATUS vector_pop_front_str(struct vector_str *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_str(vector);
+}
+
 static VECTOR_STATUS vector_auto_shrink_str(struct vector_str *vector)
 {
 	vector->size -= VECTOR_MAX_EXPAND_STEP;
@@ -147,6 +153,12 @@ VECTOR_STATUS vector_pop_int(struct vector_int *vector)
 	}
 
 	return VECTOR_STATUS_OK;
+}
+
+VECTOR_STATUS vector_pop_front_int(struct vector_int *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_int(vector);
 }
 
 static VECTOR_STATUS vector_auto_shrink_int(struct vector_int *vector)
@@ -229,6 +241,12 @@ VECTOR_STATUS vector_pop_uint(struct vector_uint *vector)
 	return VECTOR_STATUS_OK;
 }
 
+VECTOR_STATUS vector_pop_front_uint(struct vector_uint *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_uint(vector);
+}
+
 static VECTOR_STATUS vector_auto_shrink_uint(struct vector_uint *vector)
 {
 	vector->size -= VECTOR_MAX_EXPAND_STEP;
@@ -307,6 +325,12 @@ VECTOR_STATUS vector_pop_long(struct vector_long *vector)
 	}
 
 	return VECTOR_STATUS_OK;
+}
+
+VECTOR_STATUS vector_pop_front_long(struct vector_long *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_long(vector);
 }
 
 static VECTOR_STATUS vector_auto_shrink_long(struct vector_long *vector)
@@ -389,6 +413,12 @@ VECTOR_STATUS vector_pop_ulong(struct vector_ulong *vector)
 	return VECTOR_STATUS_OK;
 }
 
+VECTOR_STATUS vector_pop_front_ulong(struct vector_ulong *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_ulong(vector);
+}
+
 static VECTOR_STATUS vector_auto_shrink_ulong(struct vector_ulong *vector)
 {
 	vector->size -= VECTOR_MAX_EXPAND_STEP;
@@ -467,6 +497,12 @@ VECTOR_STATUS vector_pop_float(struct vector_float *vector)
 	}
 
 	return VECTOR_STATUS_OK;
+}
+
+VECTOR_STATUS vector_pop_front_float(struct vector_float *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_float(vector);
 }
 
 static VECTOR_STATUS vector_auto_shrink_float(struct vector_float *vector)
@@ -549,6 +585,12 @@ VECTOR_STATUS vector_pop_double(struct vector_double *vector)
 	return VECTOR_STATUS_OK;
 }
 
+VECTOR_STATUS vector_pop_front_double(struct vector_double *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_double(vector);
+}
+
 static VECTOR_STATUS vector_auto_shrink_double(struct vector_double *vector)
 {
 	vector->size -= VECTOR_MAX_EXPAND_STEP;
@@ -627,6 +669,12 @@ VECTOR_STATUS vector_pop_bool(struct vector_bool *vector)
 	}
 
 	return VECTOR_STATUS_OK;
+}
+
+VECTOR_STATUS vector_pop_front_bool(struct vector_bool *vector)
+{
+	vector->data[0] = vector->data[vector->idx];
+	return vector_pop_bool(vector);
 }
 
 static VECTOR_STATUS vector_auto_shrink_bool(struct vector_bool *vector)
