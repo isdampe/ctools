@@ -7,6 +7,9 @@ HASHMAP_STATUS hashmap_init(struct hashmap *map, const size_t size)
 {
 	map->size = size;
 	map->table = malloc(map->size * sizeof(struct hashmap_entry *));
+	if (map->table == NULL)
+		return HASHMAP_STATUS_ERR_ALLOC;
+
 	for (size_t i=0; i<size; ++i)
 		map->table[i] = NULL;
 
@@ -94,6 +97,9 @@ HASHMAP_STATUS hashmap_set_str(struct hashmap *map, const char *key,
 		HASHMAP_DATA_TYPE_STR, key);
 
 	entry->value.str = calloc(strlen(value) +1, sizeof(char));
+	if (entry->value.str == NULL)
+		return HASHMAP_STATUS_ERR_ALLOC;
+
 	strcpy(entry->value.str, value);
 
 	return HASHMAP_STATUS_OK;
