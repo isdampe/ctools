@@ -30,14 +30,6 @@ static size_t hashmap_hash_str(const struct hashmap *map, const char *key)
 	return bitstack % map->size;
 }
 
-static void hashmap_auto_free(struct hashmap_entry *entry)
-{
-	if (entry->type == HASHMAP_DATA_TYPE_STR && entry->value.str != NULL)
-		free(entry->value.str);
-	free(entry->key);
-	free(entry);
-}
-
 static void hashmap_inject_entry(struct hashmap *map, const size_t hash_key,
 	const char *key, struct hashmap_entry *entry)
 {
@@ -63,6 +55,14 @@ static void hashmap_inject_entry(struct hashmap *map, const size_t hash_key,
 	}
 
 	ep->next = entry;
+}
+
+static void hashmap_auto_free(struct hashmap_entry *entry)
+{
+	if (entry->type == HASHMAP_DATA_TYPE_STR && entry->value.str != NULL)
+		free(entry->value.str);
+	free(entry->key);
+	free(entry);
 }
 
 static inline struct hashmap_entry *hashmap_set_generic(struct hashmap *map,

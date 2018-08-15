@@ -42,6 +42,9 @@ struct hashmap {
 
 HASHMAP_STATUS hashmap_init(struct hashmap *map, const size_t size);
 static size_t hashmap_hash_str(const struct hashmap *map, const char *key);
+static void hashmap_inject_entry(struct hashmap *map, const size_t hash_key,
+	const char *key, struct hashmap_entry *entry);
+static void hashmap_auto_free(struct hashmap_entry *entry);
 static inline struct hashmap_entry *hashmap_set_generic(struct hashmap *map,
 	const HASHMAP_DATA_TYPE type, const char *key);
 HASHMAP_STATUS hashmap_set_byte(struct hashmap *map, const char *key,
@@ -50,7 +53,6 @@ HASHMAP_STATUS hashmap_set_str(struct hashmap *map, const char *key,
 	char *value);
 static inline struct hashmap_entry *hashmap_get_generic(const struct hashmap *map,
 	const char *key);
-static void hashmap_auto_free(struct hashmap_entry *entry);
 char hashmap_get_byte(const struct hashmap *map, const char *key);
 char *hashmap_get_str(const struct hashmap *map, const char *key);
 void hashmap_destroy(struct hashmap *map);
